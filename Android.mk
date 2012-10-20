@@ -8,7 +8,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := SDL
+LOCAL_MODULE := libSDL
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
 
@@ -41,7 +41,7 @@ LOCAL_SRC_FILES := \
 	$(wildcard $(LOCAL_PATH)/src/video/android/*.c))
 
 LOCAL_CFLAGS += -DGL_GLEXT_PROTOTYPES
-LOCAL_LDLIBS := -ldl -lGLESv1_CM -lGLESv2 -llog
+LOCAL_SHARED_LIBRARIES := libdl libGLESv1_CM libGLESv2 liblog
 
 LOCAL_MODULE_TAGS := optional
 
